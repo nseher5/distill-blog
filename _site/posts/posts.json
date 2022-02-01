@@ -1,0 +1,36 @@
+[
+  {
+    "path": "posts/2022-01-31-my-first-post/",
+    "title": "My first post",
+    "description": "A short description of the post. I am testing out how to create blog posts on the distill blog. Let's see if this one worked!",
+    "author": [
+      {
+        "name": "Seher Ahmad",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-31",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-01-31T23:20:22-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to My Blog",
+    "description": "Welcome to my new blog. I write about my experiences in consulting  and analytics. I hope you enjoy reading!",
+    "author": [
+      {
+        "name": "Seher Ahmad",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-31",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-01-31T23:23:33-07:00",
+    "input_file": {}
+  }
+]

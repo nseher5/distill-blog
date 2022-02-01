@@ -1,0 +1,23 @@
+---
+title: "Welcome to My Blog"
+description: |
+  Welcome to my new blog. I write about my experiences in consulting  and analytics. I hope you enjoy reading!
+author:
+  - name: Seher Ahmad 
+    url: #
+date: 01-31-2022
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+
+
