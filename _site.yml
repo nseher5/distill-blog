@@ -1,5 +1,6 @@
 name: "sehers-blog"
 title: "Seher's Blog"
+theme: theme.css
 description: |
   Seher's Blog
 output_dir: "_site"

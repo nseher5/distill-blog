@@ -1,19 +1,11 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
-      "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-31T23:26:11-07:00"
-    },
-    {
       "path": "index.html",
       "title": "Seher's Blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-31T23:26:13-07:00"
+      "last_modified": "2022-02-01T19:45:40-07:00"
     }
   ],
   "collections": ["posts/posts.json"]
