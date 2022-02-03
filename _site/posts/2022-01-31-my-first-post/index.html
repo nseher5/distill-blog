@@ -2138,7 +2138,7 @@ d-appendix {
 /* Import fonts from Google's API */
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600&display=swap');
 
 html {
   /*-- Main font sizes --*/
@@ -2155,7 +2155,7 @@ html {
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  --mono-font:       monospace;
+  --mono-font:       'Noto Sans Mono', monospace
   --body-font:       -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
   --navbar-font:     sans-serif;  /* websites + blogs only */
 }
@@ -2212,10 +2212,37 @@ d-article li {
 d-article p, d-article ul, d-article ol, d-article blockquote {
     margin-bottom: 16px;
 }
-code {
+
+d-article pre {
   font-family: 'Noto Sans Mono', monospace;
   font-weight: 400;
   font-size: 0.9em;
+  background-color: #eeeeee;
+  padding: 10px;
+  overflow-x: auto !important;
+}
+
+d-article div.sourceCode pre{
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: 400;
+  font-size: 0.9em;
+  overflow-x: auto !important;
+}
+
+
+/*-- INLINE CODE -- */
+d-article p code {
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: 400;
+  font-size: 0.9em;
+  font-size: 14px;
+  color: #000000;
+  background-color: #eeeeee;
+  padding: 3px;
+}
+
+d-article div.sourceCode code, d-article pre code {
+    font-family: 'Noto Sans Mono', monospace;
 }</style>
 <style type="text/css">
 /* base style */

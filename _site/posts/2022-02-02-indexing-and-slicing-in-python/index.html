@@ -2137,7 +2137,8 @@ d-appendix {
 /* Import fonts from Google's API */
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Mono&display=swap');
+
 
 html {
   /*-- Main font sizes --*/
@@ -2153,10 +2154,10 @@ html {
   --aside-color:     rgba(0, 0, 0, 0.6);
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
-  --heading-font:    -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  --mono-font:       monospace;
-  --body-font:       -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  --navbar-font:     sans-serif;  /* websites + blogs only */
+  --heading-font:    'Noto Sans', sans-serif;;
+  --mono-font:       'Noto Sans Mono', monospace
+  --body-font:       'Noto Sans', sans-serif;;
+  --navbar-font:     'Noto Sans', sans-serif;;  /* websites + blogs only */
 }
 
 /*-- ARTICLE METADATA --*/
@@ -2211,14 +2212,26 @@ d-article li {
 d-article p, d-article ul, d-article ol, d-article blockquote {
     margin-bottom: 16px;
 }
-code {
+
+d-article pre {
   font-family: 'Noto Sans Mono', monospace;
-  background: #F5F5F5;
   font-weight: 400;
   font-size: 0.9em;
+  background-color: #eeeeee;
+  padding: 10px;
+  overflow-x: auto !important;
 }
-d-code {
-  background: grey;
+
+
+/*-- INLINE CODE -- */
+d-article p code {
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: 400;
+  font-size: 0.9em;
+  font-size: 14px;
+  color: #000000;
+  background-color: #eeeeee;
+  padding: 3px;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2458,19 +2471,22 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h2 id="indexing">Indexing</h2>
 <h3 id="positive-indexing">Positive Indexing</h3>
 <p>Used to access single element of list</p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_num <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_num[<span class="dv">0</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> [<span class="st">&quot;Seher&quot;</span>, <span class="st">&quot;plays&quot;</span>, <span class="st">&quot;video&quot;</span>, <span class="st">&quot;games&quot;</span>]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">3</span>] </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>my_text[<span class="dv">3</span>] </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;games&quot;</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>my_word <span class="op">=</span> <span class="st">&quot;Tyrannosaurus&quot;</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>my_word[<span class="dv">1</span>]</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;y&quot;</span></span></code></pre></div>
+</div>
 <h3 id="negative-indexing">Negative Indexing</h3>
 <p>Access an element from a list but start from the end of the list</p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_num <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_num[<span class="op">-</span><span class="dv">1</span>]                    <span class="co"># Access last element of a list</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 6</span></span>
@@ -2480,54 +2496,66 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;video&quot;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>my_word <span class="op">=</span> <span class="st">&quot;Tyrannosaurus&quot;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>my_word[<span class="op">-</span><span class="bu">len</span>(my_word)]        <span class="co"># Retreive first element from list</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>my_word[<span class="op">-</span><span class="bu">len</span>(my_word)]        <span class="co"># Retrieve first element from list</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;T&quot;</span></span></code></pre></div>
+</div>
 <h2 id="slicing">Slicing</h2>
 <p>Retrieve multiple items from a list. Slicing gives lists whereas indexing gave items. Slicing is done using the <code>:</code> operator, the general format is <code>my_list[start:stop]</code> where start and stop can be positive or negative values.</p>
 <h3 id="slicing-with-positive-values">Slicing with positive values</h3>
-<p>Retreive items from start to end except the last one.</p>
+<p>Retrieve items from start to end except the last one.</p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_num <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>] </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_num[<span class="dv">0</span>:<span class="dv">2</span>]                    <span class="co"># Items from index 0 to index 2 (non inclusive)</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># [0, 1]                       </span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> [<span class="st">&quot;Seher&quot;</span>, <span class="st">&quot;plays&quot;</span>, <span class="st">&quot;video&quot;</span>, <span class="st">&quot;games&quot;</span>]</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text[<span class="dv">2</span>])              <span class="co"># Retreive item on 2nd index</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>my_text[<span class="dv">2</span>]                     <span class="co"># Retrieve item on 2nd index</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;video&quot;</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text[<span class="dv">0</span>:<span class="dv">2</span>])            <span class="co"># Start from zero and retreive 2 items, or from index 0 to index 2 (non inclusive)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>my_text[<span class="dv">0</span>:<span class="dv">2</span>]                   <span class="co"># Start from zero and retreive 2 items, or from index 0 to index 2 (non inclusive)</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># [&quot;Seher&quot;, &quot;plays&quot;]</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text[<span class="dv">0</span>:<span class="dv">3</span>])            <span class="co"># Start from zero and retreive 3 items, or from index 0 to index 3 (non inclusive)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>my_text[<span class="dv">0</span>:<span class="dv">3</span>]                   <span class="co"># Start from zero and retreive 3 items, or from index 0 to index 3 (non inclusive)</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># [&quot;Seher&quot;, &quot;plays&quot;, &quot;video&quot;]</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text[<span class="dv">1</span>:<span class="dv">3</span>])            <span class="co"># Take one item off the front, or from index 1 to index 3 (non inclusive)</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>my_text[<span class="dv">1</span>:<span class="dv">3</span>]                   <span class="co"># Take one item off the front, or from index 1 to index 3 (non inclusive)</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># [&quot;plays&quot;, &quot;video&quot;]</span></span></code></pre></div>
+</div>
 <p>Emitting the start or stop index, defaults start to <code>None</code> and stop to <code>len(my_list)-1</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_word[<span class="dv">1</span>:]                    <span class="co"># my_list[start :] = items start at index 1 until the rest of the list</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;rannosaurus&#39;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>my_word[:<span class="dv">4</span>]                    <span class="co"># my_list[: stop] = items start at index 0 until index 4 (non inclusive)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;Tyra&#39;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>my_word[:]                     <span class="co"># A copy of the whole list</span></span></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_word <span class="op">=</span> <span class="st">&quot;Tyrannosaurus&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>my_word[<span class="dv">1</span>:]                    <span class="co"># my_list[start :] = items start at index 1 until the rest of the list</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;rannosaurus&#39;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>my_word[:<span class="dv">4</span>]                    <span class="co"># my_list[: stop] = items start at index 0 until index 4 (non inclusive)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;Tyra&#39;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>my_word[:]                     <span class="co"># A copy of the whole list</span></span></code></pre></div>
+</div>
 <h3 id="slicing-with-negative-values">Slicing with negative values</h3>
-<p>Retreive items from start to end except the last one, but start from the back of the list.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>index <span class="im">from</span> front                 <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span>  <span class="dv">12</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>index <span class="im">from</span> back                 <span class="op">-</span><span class="dv">13</span> <span class="op">-</span><span class="dv">12</span> <span class="op">-</span><span class="dv">11</span> <span class="op">-</span><span class="dv">10</span> <span class="op">-</span><span class="dv">9</span>  <span class="op">-</span><span class="dv">8</span>  <span class="op">-</span><span class="dv">7</span>  <span class="op">-</span><span class="dv">6</span>  <span class="op">-</span><span class="dv">5</span>  <span class="op">-</span><span class="dv">4</span>  <span class="op">-</span><span class="dv">3</span>  <span class="op">-</span><span class="dv">2</span>  <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                               <span class="op">+---+---+---+---+---+---+---+---+---+---+---+---+---+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>my_word                        <span class="op">|</span> T <span class="op">|</span> y <span class="op">|</span> r <span class="op">|</span> a <span class="op">|</span> n <span class="op">|</span> n <span class="op">|</span> o <span class="op">|</span> s <span class="op">|</span> a <span class="op">|</span> u <span class="op">|</span> r <span class="op">|</span> u <span class="op">|</span> s <span class="op">|</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                               <span class="op">+---+---+---+---+---+---+---+---+---+---+---+---+---+</span></span>
+<p>Retrieve items from start to end except the last one, but start from the back of the list.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#index from front                 0   1   2   3   4   5   6   7   8   9  10  11  12</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#index from back                 -13 -12 -11 -10 -9  -8  -7  -6  -5  -4  -3  -2  -1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                               +---+---+---+---+---+---+---+---+---+---+---+---+---+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#my_word                        | T | y | r | a | n | n | o | s | a | u | r | u | s |</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#                               +---+---+---+---+---+---+---+---+---+---+---+---+---+</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>my_word[:<span class="op">-</span><span class="dv">1</span>]                   <span class="co"># Start from index 0 until index -1 (non inclusive) </span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;Tyrannosauru&#39;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>my_word[<span class="op">-</span><span class="dv">2</span>:]                   <span class="co"># Start from index -2 until the end </span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;us&#39;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>my_word[<span class="op">-</span><span class="dv">9</span>:<span class="op">-</span><span class="dv">1</span>]                 <span class="co"># Start at index -9 until index -1 (non inclusive)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;nnosauru&#39;</span></span></code></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>my_word <span class="op">=</span> <span class="st">&quot;Tyrannosaurus&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>my_word[:<span class="op">-</span><span class="dv">1</span>]                   <span class="co"># Start from index 0 until index -1 (non inclusive) </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;Tyrannosauru&#39;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>my_word[<span class="op">-</span><span class="dv">2</span>:]                   <span class="co"># Start from index -2 until the end </span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;us&#39;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>my_word[<span class="op">-</span><span class="dv">9</span>:<span class="op">-</span><span class="dv">1</span>]                 <span class="co"># Start at index -9 until index -1 (non inclusive)</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;nnosauru&#39;</span></span></code></pre></div>
+</div>
 <h2 id="slicing-while-stepping">Slicing while Stepping</h2>
 <p>The step value is the amount by which the index increases. The format is <code>my_list[start:stop:step]</code>. Step can also be a negative value in which case you’re iterating on a list in reverse.</p>
 <h3 id="step-with-positive-value">Step with positive value</h3>
 <p>Retrieve every nth item in list. If the step value is empty it defaults to 1.</p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_num <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>] </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>my_num[::]                    <span class="co"># Every item in list </span></span>
@@ -2538,29 +2566,34 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>my_num[<span class="dv">1</span>:<span class="dv">5</span>:<span class="dv">2</span>]                 <span class="co"># Every second item in list from index 1 to index 5 (non-inclusive)</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># [2, 4]</span></span></code></pre></div>
+</div>
 <h3 id="step-with-negative-value">Step with negative value</h3>
 <p>If the step is negative, you’re slicing over the iterable in reverse from start to stop with the stop index excluded. The default value of start and stop in <code>my_list[start: stop: step]</code> changes to -1 and -(len(my_list)+1) respectively.</p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>index <span class="im">from</span> front                 <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span>   <span class="dv">4</span>   <span class="dv">5</span>   </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>index <span class="im">from</span> back                 <span class="op">-</span><span class="dv">6</span>  <span class="op">-</span><span class="dv">5</span>  <span class="op">-</span><span class="dv">4</span>  <span class="op">-</span><span class="dv">3</span>  <span class="op">-</span><span class="dv">2</span>  <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                               <span class="op">+---+---+---+---+---+---+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>my_num                         <span class="op">|</span> <span class="dv">1</span> <span class="op">|</span> <span class="dv">2</span> <span class="op">|</span> <span class="dv">3</span> <span class="op">|</span> <span class="dv">4</span> <span class="op">|</span> <span class="dv">5</span> <span class="op">|</span> <span class="dv">6</span> <span class="op">|</span> </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                               <span class="op">+---+---+---+---+---+---+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#index from front                 0   1   2   3   4   5   </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#index from back                 -6  -5  -4  -3  -2  -1</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                               +---+---+---+---+---+---+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#my_num                         | 1 | 2 | 3 | 4 | 5 | 6 | </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#                               +---+---+---+---+---+---+</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                      </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>my_num[::<span class="op">-</span><span class="dv">1</span>]                   <span class="co"># Equivalent to my_num[-1:-7:-1], from index -1 to index -7 (non inclusive) </span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># [6, 5, 4, 3, 2, 1]           # All items in list but reversed</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>my_num[::<span class="op">-</span><span class="dv">2</span>]            </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># [6, 4, 2]                    # Every second item in list but revered</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>my_num[<span class="dv">1</span>::<span class="op">-</span><span class="dv">1</span>]                  <span class="co"># Equivalent to my_num[1:-7:-1], from index 1 to index -7 (non inclusive) but reversed</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># [1, 2]                       # The first two items, reversed</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>my_num[:<span class="op">-</span><span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>]                 <span class="co"># Equivalent to my_num[-1:-3:-1], from index -1 to index -3 (non-inclusive) but reversed  </span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># [6, 5]                       # The last two items, reversed</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>my_num[<span class="op">-</span><span class="dv">3</span>::<span class="op">-</span><span class="dv">1</span>]                 <span class="co"># Equivalent to my_num[-3:-7:-1], from index -3 to -7 (non inclusive) but reversed  </span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># [4, 3, 2, 1]                 # Everything except the last two items, reversed</span></span></code></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>my_num <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>] </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>my_num[::<span class="op">-</span><span class="dv">1</span>]                   <span class="co"># Equivalent to my_num[-1:-7:-1], from index -1 to index -7 (non inclusive) </span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># [6, 5, 4, 3, 2, 1]           # All items in list but reversed</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>my_num[::<span class="op">-</span><span class="dv">2</span>]            </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># [6, 4, 2]                    # Every second item in list but revered</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>my_num[<span class="dv">1</span>::<span class="op">-</span><span class="dv">1</span>]                  <span class="co"># Equivalent to my_num[1:-7:-1], from index 1 to index -7 (non inclusive) but reversed</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [1, 2]                       # The first two items, reversed</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>my_num[:<span class="op">-</span><span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>]                 <span class="co"># Equivalent to my_num[-1:-3:-1], from index -1 to index -3 (non-inclusive) but reversed  </span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># [6, 5]                       # The last two items, reversed</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>my_num[<span class="op">-</span><span class="dv">3</span>::<span class="op">-</span><span class="dv">1</span>]                 <span class="co"># Equivalent to my_num[-3:-7:-1], from index -3 to -7 (non inclusive) but reversed  </span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># [4, 3, 2, 1]                 # Everything except the last two items, reversed</span></span></code></pre></div>
+</div>
 <h2 id="conclusion">Conclusion</h2>
 <p>In python, lists and string objects can be indexed and sliced. Indexing is done using square brackets <code>[]</code> while slicing is done using the <code>:</code> operator. Slicing differs from indexing because it outputs a list instead of an item. A colon operator allows us to select a range, forwards or backwards, and at increments depending on the values in my_list [start:stop:step].</p>
 <p><em>Source: <a href="https://stackoverflow.com/questions/509211/understanding-slice-notation">Stack Overflow Understanding Slice Notation</a></em></p>
