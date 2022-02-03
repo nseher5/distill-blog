@@ -90,10 +90,10 @@ d-article p, d-article ul, d-article ol, d-article blockquote {
 }
 code {
   font-family: 'Noto Sans Mono', monospace;
-  background: #F5F5F5;
   font-weight: 400;
   font-size: 0.9em;
+  white-space : pre-wrap !important;
 }
 d-code {
-  background: grey;
+  background: #F5F5F5;
 }
