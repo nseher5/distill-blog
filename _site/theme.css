@@ -11,7 +11,10 @@
 /* Optional: embed custom fonts here with `@import`          */
 /* This must remain at the top of this file.                 */
 
-
+/* Import fonts from Google's API */
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
 
 html {
   /*-- Main font sizes --*/
@@ -84,4 +87,9 @@ d-article li {
 }
 d-article p, d-article ul, d-article ol, d-article blockquote {
     margin-bottom: 16px;
+}
+code {
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: 400;
+  font-size: 0.9em;
 }

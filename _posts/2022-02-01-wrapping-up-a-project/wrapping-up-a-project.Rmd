@@ -2,9 +2,13 @@
 title: "Wrapping up a project"
 description: |
   A guide to project retrospectives.
+date: 02-01-2022
+slug: "project-wrap-up"
 output:
   distill::distill_article:
     toc: true
+categories:
+  - management
 ---
 
 

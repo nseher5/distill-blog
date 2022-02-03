@@ -1,0 +1,163 @@
+---
+title: "Indexing and Slicing in Python"
+description: |
+  Breaking down positive negative indexing and slicing in Python.
+date: 02-02-2022
+slug: "indexing-slicing-python"
+output:
+  distill::distill_article:
+    toc: true
+categories:
+  - coding
+  - python
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+In python, there are several ways to select items or ranges from lists. Indexing allows accessing items in a list using their index number, typically done using the bracket operator ```[]```. Slicing allows accessing multiple items inside a list, typically done using the colon operator ```:```.
+
+## Indexing
+### Positive Indexing 
+Used to access single element of list
+
+```python
+my_num = [1, 2, 3, 4, 5, 6]
+my_num[0]
+# 1
+
+my_text = ["Seher", "plays", "video", "games"]
+my_list[3] 
+# "games"
+
+my_word = "Tyrannosaurus"
+my_word[1]
+# "y"
+```
+
+### Negative Indexing
+Access an element from a list but start from the end of the list
+ 
+```python
+my_num = [1, 2, 3, 4, 5, 6]
+my_num[-1]                    # Access last element of a list
+# 6
+
+my_text = ["Seher", "plays", "video", "games"]
+my_text[-2]                   # Access second from last element of a list
+# "video"
+
+my_word = "Tyrannosaurus"
+my_word[-len(my_word)]        # Retreive first element from list
+# "T"
+  ```
+## Slicing  
+
+Retrieve multiple items from a list. Slicing gives lists whereas indexing gave items. Slicing is done using the ```:``` operator, the general format is ```my_list[start:stop]``` where start and stop can be positive or negative values.
+
+### Slicing with positive values
+Retreive items from start to end except the last one. 
+
+```python
+my_num = [1, 2, 3, 4, 5, 6] 
+my_num[0:2]                    # Items from index 0 to index 2 (non inclusive)
+# [0, 1]                       
+
+my_text = ["Seher", "plays", "video", "games"]
+print(my_text[2])              # Retreive item on 2nd index
+# "video"
+
+print(my_text[0:2])            # Start from zero and retreive 2 items, or from index 0 to index 2 (non inclusive)
+# ["Seher", "plays"]
+
+print(my_text[0:3])            # Start from zero and retreive 3 items, or from index 0 to index 3 (non inclusive)
+# ["Seher", "plays", "video"]
+
+print(my_text[1:3])            # Take one item off the front, or from index 1 to index 3 (non inclusive)
+# ["plays", "video"]
+```
+Emitting the start or stop index, defaults start to ```None``` and stop to ```len(my_list)-1```
+
+```python
+my_word[1:]                    # my_list[start :] = items start at index 1 until the rest of the list
+# 'rannosaurus'
+my_word[:4]                    # my_list[: stop] = items start at index 0 until index 4 (non inclusive)
+# 'Tyra'
+my_word[:]                     # A copy of the whole list
+```
+
+### Slicing with negative values
+Retreive items from start to end except the last one, but start from the back of the list.
+
+```python
+index from front                 0   1   2   3   4   5   6   7   8   9  10  11  12
+index from back                 -13 -12 -11 -10 -9  -8  -7  -6  -5  -4  -3  -2  -1
+                               +---+---+---+---+---+---+---+---+---+---+---+---+---+
+my_word                        | T | y | r | a | n | n | o | s | a | u | r | u | s |
+                               +---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+my_word[:-1]                   # Start from index 0 until index -1 (non inclusive) 
+# 'Tyrannosauru'
+
+my_word[-2:]                   # Start from index -2 until the end 
+# 'us'
+
+my_word[-9:-1]                 # Start at index -9 until index -1 (non inclusive)
+# 'nnosauru'
+```
+
+## Slicing while Stepping 
+The step value is the amount by which the index increases. The format is ```my_list[start:stop:step]```. Step can also be a negative value in which case you're iterating on a list in reverse.
+
+### Step with positive value
+Retrieve every nth item in list. If the step value is empty it defaults to 1.
+
+```python
+my_num = [1, 2, 3, 4, 5, 6] 
+
+my_num[::]                    # Every item in list 
+# [1, 2, 3, 4, 5, 6] 
+
+my_num[::2]                   # Every second item in list
+# [1, 3, 5]
+
+my_num[1:5:2]                 # Every second item in list from index 1 to index 5 (non-inclusive)
+# [2, 4]
+
+```
+### Step with negative value
+
+If the step is negative, you're slicing over the iterable in reverse from start to stop with the stop index excluded. The default value of start and stop in ```my_list[start: stop: step]``` changes to -1 and -(len(my_list)+1) respectively.
+
+```python
+
+index from front                 0   1   2   3   4   5   
+index from back                 -6  -5  -4  -3  -2  -1
+                               +---+---+---+---+---+---+
+my_num                         | 1 | 2 | 3 | 4 | 5 | 6 | 
+                               +---+---+---+---+---+---+
+                      
+my_num[::-1]                   # Equivalent to my_num[-1:-7:-1], from index -1 to index -7 (non inclusive) 
+# [6, 5, 4, 3, 2, 1]           # All items in list but reversed
+
+my_num[::-2]            
+# [6, 4, 2]                    # Every second item in list but revered
+
+my_num[1::-1]                  # Equivalent to my_num[1:-7:-1], from index 1 to index -7 (non inclusive) but reversed
+# [1, 2]                       # The first two items, reversed
+
+my_num[:-3:-1]                 # Equivalent to my_num[-1:-3:-1], from index -1 to index -3 (non-inclusive) but reversed  
+# [6, 5]                       # The last two items, reversed
+
+my_num[-3::-1]                 # Equivalent to my_num[-3:-7:-1], from index -3 to -7 (non inclusive) but reversed  
+# [4, 3, 2, 1]                 # Everything except the last two items, reversed
+```
+
+## Conclusion
+In python, lists and string objects can be indexed and sliced. Indexing is done using square brackets ```[]``` while slicing is done using the ```:``` operator. Slicing differs from indexing because it outputs a list instead of an item. A colon operator allows us to select a range, forwards or backwards, and at increments depending on the values in my_list [start:stop:step]. 
+
+*Source: [Stack Overflow Understanding Slice Notation](https://stackoverflow.com/questions/509211/understanding-slice-notation)*
+
+

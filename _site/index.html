@@ -2124,7 +2124,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
 
-
+  /* Import fonts from Google's API */
+  @import url('https://fonts.googleapis.com/css2?family=Lato');
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
 
   html {
     /*-- Main font sizes --*/
@@ -2197,6 +2200,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   d-article p, d-article ul, d-article ol, d-article blockquote {
       margin-bottom: 16px;
+  }
+  code {
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 400;
+    font-size: 0.9em;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2527,11 +2535,27 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Seher&#39;s Blog">Seher's Blog</h1>
+<a href="posts/2022-02-02-indexing-and-slicing-in-python/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["coding","python"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 2, 2022</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail"></div>
+<div class="description">
+<h2>Indexing and Slicing in Python</h2>
+<div class="dt-tags">
+<div class="dt-tag">coding</div>
+<div class="dt-tag">python</div>
+</div>
+<p>Breaking down positive negative indexing and slicing in Python.</p>
+</div>
+</a>
 <a href="posts/2022-02-01-wrapping-up-a-project/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["management"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 1, 2022</div>
 <div class="dt-authors"></div>
@@ -2541,7 +2565,9 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Wrapping up a project</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">management</div>
+</div>
 <p>A guide to project retrospectives.</p>
 </div>
 </a>
@@ -2580,11 +2606,34 @@ function init_posts_list() {
 </div>
 </a>
 </div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:articles">articles</a>
+<span class="category-count">(4)</span>
+</li>
+<li>
+<a href="#category:coding">coding</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:management">management</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:python">python</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
+</div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>Seher’s Blog</h1>
