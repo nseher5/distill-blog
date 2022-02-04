@@ -1,0 +1,61 @@
+---
+title: "Starting a new project"
+description: |
+  How to get to know your team and establish norms when you join a new team
+date: 2022-02-04
+slug: "project-start"
+output:
+  distill::distill_article:
+    toc: true
+categories:
+  - management
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+In a career like consulting, you're constantly change teams, clients and projects on a monthly basis. Your new team will most probably be comprised of people you've never even met, they might not know your strengths and weaknesses, your future goals, your working style, and any constraints at home. It's worth spending some time before starting work to introduce yourself (your authenthic self), get to know your team members and establish team norms to ensure good collaboration going forward.
+
+## Introduce yourself
+One way to do this on a new project is by setting up 1:1 with individual team members and leadership you'll be interacting with on a day to day basis. You can use this opportunity to share your working style, boundaries, and personal narrative. The first 1:1 is also an opportunity to get to know the other person, their working style, strengths, and backgrounds so you account for their preferred ways of working as you plan out your project. 
+
+### Personality
+Reflect on your working style, strengths, and personality characteristics. Talk about how you work best and what you're good at so your teammates can ask you for help in areas you're an expert in. Use this as an opportunity to ask others about their working styles and find synergies in personality and strengths 
+
+<img width="647" alt="image" src="https://user-images.githubusercontent.com/63751751/146279857-7cf3bc4c-d359-4e35-a98a-dc0f99066536.png">
+
+### Details
+Communicate any other details that might be helpful as you work together with your team. If there are other workstreams or initiatives you help out with, tell your team so they have visibility into whats on your plate. Ways of working e.g. communication preferences, brainstorming methods, and working hours should also be discussed to feed into team norms. Use this opportunity to tell your team a little about yourself outside or work, your hobbies, interests, passion projects. 
+
+<img width="648" alt="image" src="https://user-images.githubusercontent.com/63751751/146279880-ca0c52b0-8f8d-4c28-a103-9401c4431cd1.png">
+
+### Past and Future
+Sharing past experiences and backgrounds helps establish a common ground and builds camaraderie e.g. when you find our your teammate went to the same school as you. Communicating your future aspirations and developmental goals helps your team and managers provide the right networking or training opportunity that might be a good fit with your career goals. Including photos makes you more human especially in the new normal where we dont see our teammate svery often.
+
+<img width="646" alt="image" src="https://user-images.githubusercontent.com/63751751/146279892-643f8550-d9ec-4c23-ba1c-797946ef8662.png">
+
+## Establish Team Norms
+
+Not everyone in your new team may share the same working style with you. These often pose problems later on e.g. being expected to lead a weekly meeting at 10pm (I've been there) or working with team members who expect over/under communication. An internal project kick-off meeting is standard practice in consulting projects to get to know the entire team before starting work. It is used to identify differences, similarities, tensions, and opportunities in working style, daily schedules, and weekly cadences in order to facilitate team consensus on a shared approach. 
+
+### Working Styles
+Communicating and aligning working styles among team members can present opportunities for some team members to hop on a call early morning or late at night if that works for their schedule. It also highlights tensions in working style that might resurface later, so its useful to get ahead of it and have a conversation on how to best address it. 
+
+<img width="682" alt="image" src="https://user-images.githubusercontent.com/63751751/146282672-3ca7c325-82f9-4089-8865-959efa6b4f29.png">
+
+### Daily Time Availability
+Juggling remote work with 4-5 different time zones can be mentally draining, especially if you have to work late to attend calls with Asia. Providing visibility into team members preferred working hours and what hours are off-limits for personal reasons, the team can brainstorm ways to enable and respect varying day structures, working styles and boundaries. Teams can also think about how to work smarter, give back time (this could have been an email), and enable team members to charge offline.
+
+<img width="680" alt="image" src="https://user-images.githubusercontent.com/63751751/146282701-9007f48e-f443-4e97-870a-c8bc143e1021.png">
+
+### Weekly Team Schedule
+After individual working hours are set and agreed upon, establish how the team will work during the week. Will you have a daily standup and a wrap up call? When should we have collaboration sessions based on previously established team working hours? Should we have a weekly retrospective? Are there important recurring client meetings?
+
+<img width="682" alt="image" src="https://user-images.githubusercontent.com/63751751/146282724-fc5701d7-5a0c-4ae2-997f-22412fee3f63.png">
+
+## Conclusion
+When you join a new team, set up 1:1s with them to introduce yourself and get to know your team and use a project kick-off call to establish team norms and ways of working going forward. By doing this you can align your ways of working, accelerate collaboration, and enable your team to bring their authentic self to work.
+
+

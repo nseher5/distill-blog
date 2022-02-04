@@ -2127,7 +2127,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* Import fonts from Google's API */
   @import url('https://fonts.googleapis.com/css2?family=Lato');
   @import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Mono&display=swap');
+
 
   html {
     /*-- Main font sizes --*/
@@ -2143,10 +2144,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --aside-color:     rgba(0, 0, 0, 0.6);
     --fig-cap-color:   rgba(0, 0, 0, 0.6);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    --heading-font:    'Noto Sans', sans-serif;;
     --mono-font:       'Noto Sans Mono', monospace
-    --body-font:       -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    --navbar-font:     sans-serif;  /* websites + blogs only */
+    --body-font:       'Noto Sans', sans-serif;;
+    --navbar-font:     'Noto Sans', sans-serif;;  /* websites + blogs only */
   }
 
   /*-- ARTICLE METADATA --*/
@@ -2211,13 +2212,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     overflow-x: auto !important;
   }
 
-  d-article div.sourceCode pre{
-    font-family: 'Noto Sans Mono', monospace;
-    font-weight: 400;
-    font-size: 0.9em;
-    overflow-x: auto !important;
-  }
-
 
   /*-- INLINE CODE -- */
   d-article p code {
@@ -2228,10 +2222,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #000000;
     background-color: #eeeeee;
     padding: 3px;
-  }
-
-  d-article div.sourceCode code, d-article pre code {
-      font-family: 'Noto Sans Mono', monospace;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2565,13 +2555,30 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Seher&#39;s Blog">Seher's Blog</h1>
+<a href="posts/2022-02-04-starting-a-new-project/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["management"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 4, 2022</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail"></div>
+<div class="description">
+<h2>Starting a new project</h2>
+<div class="dt-tags">
+<div class="dt-tag">management</div>
+</div>
+<p>How t get to know your team and establish team norms when you join a new team</p>
+</div>
+</a>
 <a href="posts/2022-02-02-indexing-and-slicing-in-python/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["coding","python"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 2, 2022</div>
 <div class="dt-authors"></div>
 </div>
-<div class="thumbnail"></div>
+<div class="thumbnail">
+<img/>
+</div>
 <div class="description">
 <h2>Indexing and Slicing in Python</h2>
 <div class="dt-tags">
@@ -2596,23 +2603,6 @@ function init_posts_list() {
 <div class="dt-tag">management</div>
 </div>
 <p>A guide to project retrospectives.</p>
-</div>
-</a>
-<a href="posts/2022-01-31-my-first-post/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 31, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Seher Ahmad</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>My first post</h2>
-<div class="dt-tags"></div>
-<p>A short description of the post. I am testing out how to create blog posts on the distill blog. Let's see if this one worked!</p>
 </div>
 </a>
 <a href="posts/welcome/" class="post-preview">
@@ -2647,7 +2637,7 @@ function init_posts_list() {
 </li>
 <li>
 <a href="#category:management">management</a>
-<span class="category-count">(1)</span>
+<span class="category-count">(2)</span>
 </li>
 <li>
 <a href="#category:python">python</a>
@@ -2660,7 +2650,7 @@ function init_posts_list() {
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>Seher’s Blog</h1>
@@ -2690,4 +2680,4 @@ function init_posts_list() {
 
 </body>
 
-</htm
+</html>
